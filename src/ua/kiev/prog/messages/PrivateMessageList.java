@@ -18,14 +18,14 @@ public class PrivateMessageList {
 
     private final Map<String, List<Message>> messages = new ConcurrentHashMap<>();
 
-    public void addMessage(String to, Message message) {
+    public synchronized void addMessage(String to, Message message) {
         if (!messages.containsKey(to)) {
             messages.put(to, new CopyOnWriteArrayList<>());
         }
         messages.get(to).add(message);
     }
 
-    public String getMessages(String loginName) {
+    public synchronized String getMessages(String loginName) {
         List<Message> res = messages.get(loginName);
 
         if (res != null && res.size() > 0) {

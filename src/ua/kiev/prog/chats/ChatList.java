@@ -24,11 +24,11 @@ public class ChatList {
         return chatList;
     }
 
-    public void addChat(String name) {
+    public synchronized void addChat(String name) {
         chats.add(new Chat(name));
     }
 
-    public Chat isChatAlreadyExist(String name) {
+    public synchronized Chat isChatAlreadyExist(String name) {
         Chat result = null;
         for (Chat chat : chats) {
             if (chat.getName().equals(name)) {
@@ -38,16 +38,16 @@ public class ChatList {
         return result;
     }
 
-    public void  addClientToChat(Chat chat, String clientName) {
+    public synchronized void addClientToChat(Chat chat, String clientName) {
         chat.addClient(clientName);
         clients.getClient(clientName).setChatRoom(chat.getName());
     }
 
-    public void addMessageToChat(String chatName, Message message) {
+    public synchronized void addMessageToChat(String chatName, Message message) {
         isChatAlreadyExist(chatName).addMessage(message);
     }
 
-    public String getMessagesFromChat(String chatName, String loginName) {
+    public synchronized String getMessagesFromChat(String chatName, String loginName) {
         return isChatAlreadyExist(chatName).getMessages(loginName);
     }
 
