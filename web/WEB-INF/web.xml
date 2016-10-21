@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+    <servlet>
+        <servlet-name>AddClient</servlet-name>
+        <servlet-class>ua.kiev.prog.servlets.AddClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddClient</servlet-name>
+        <url-pattern>/addClient</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateChatRoom</servlet-name>
+        <servlet-class>ua.kiev.prog.servlets.CreateChatRoomServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateChatRoom</servlet-name>
+        <url-pattern>/createChatRoom</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EnterChatRoom</servlet-name>
+        <servlet-class>ua.kiev.prog.servlets.EnterChatRoomServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnterChatRoom</servlet-name>
+        <url-pattern>/enterChatRoom</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddMessage</servlet-name>
+        <servlet-class>ua.kiev.prog.servlets.AddMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddMessage</servlet-name>
+        <url-pattern>/addMessage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetMessages</servlet-name>
+        <servlet-class>ua.kiev.prog.servlets.GetMessagesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetMessages</servlet-name>
+        <url-pattern>/getMessages</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAllClients</servlet-name>
+        <servlet-class>ua.kiev.prog.servlets.GetAllClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllClients</servlet-name>
+        <url-pattern>/getAllClients</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetClientStatus</servlet-name>
+        <servlet-class>ua.kiev.prog.servlets.GetClientStatus</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetClientStatus</servlet-name>
+        <url-pattern>/getClientStatus</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>ua.kiev.prog.listener.SessionListener</listener-class>
+    </listener>
+</web-app>
